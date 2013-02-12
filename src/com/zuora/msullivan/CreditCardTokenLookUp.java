@@ -141,9 +141,7 @@ public class CreditCardTokenLookUp {
 		 * @param cardExprYear the cardExprYear to set
 		 */
 		public void setCardExprYear(String cardExprYear) {
-			if (cardExprYear.length() > 4) {
-				this.cardExprYear = cardExprYear.substring(0, 4);
-			} else { this.cardExprYear = "00"; }
+				this.cardExprYear = cardExprYear;
 			
 		}
 
@@ -158,9 +156,7 @@ public class CreditCardTokenLookUp {
 		 * @param cardExprMonth the cardExprMonth to set
 		 */
 		public void setCardExprMonth(String cardExprMonth) {
-			if (cardExprMonth != null && cardExprMonth.length() == 6) {
-				this.cardExprMonth = cardExprMonth.substring(4, 6);
-			} else { this.cardExprMonth = "00"; }
+				this.cardExprMonth = cardExprMonth;
 		}
 
 
@@ -343,58 +339,58 @@ public class CreditCardTokenLookUp {
 			
 			//token
 			System.out.println("Enter Column number of token values");
-			tokenColumn = 11;//in.nextInt();
+			tokenColumn = in.nextInt();
 			System.out.println("DEBUG tokenColumn: " + tokenColumn);			
 			
 			//Card Number
 			System.out.println("Enter Column of Credit Card Number values");
-			cardNumColumn = 30;//in.nextInt();
+			cardNumColumn = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + cardNumColumn);
 			
 			
 			//Exp Year
 			System.out.println("Enter Column of Credit Card Expiration Year values");
-			expirationYearColumn = 31;//in.nextInt();
+			expirationYearColumn = in.nextInt();
 			System.out.println("DEBUG expirationYearColumn: " + expirationYearColumn);
 			
 			//Exp Month
 			System.out.println("Enter Column of Credit Card Expiration Month values");
-			expirationMonthColumn = 31;//in.nextInt();
+			expirationMonthColumn = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + expirationMonthColumn);
 			
 			//Holder Name
 			System.out.println("Enter Column of Credit Card Holder Name values");
-			creditCardHolderNameColumn = 13;//in.nextInt();
+			creditCardHolderNameColumn = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardHolderNameColumn);
 			
 			//Address 1
 			System.out.println("Enter Column of Credit Card Address 1 values");
-			creditCardAddress1Column = 19;//in.nextInt();
+			creditCardAddress1Column = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardAddress1Column);
 			
 			//Address 2
 			System.out.println("Enter Column of Credit Card Address 2 values");
-			creditCardAddress2Column = 20;//in.nextInt();
+			creditCardAddress2Column = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardAddress2Column);
 			
 			//Country
 			System.out.println("Enter Column of Credit Card Country values");
-			creditCardCountryColumn = 26;//in.nextInt();
+			creditCardCountryColumn = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardCountryColumn);
 			
 			//State
 			System.out.println("Enter Column of Credit Card State values");
-			creditCardStateColumn = 24;//in.nextInt();
+			creditCardStateColumn = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardStateColumn);
 			
 			//City
 			System.out.println("Enter Column of Credit Card City values");
-			creditCardCityColumn = 22;//in.nextInt();
+			creditCardCityColumn = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardCityColumn);
 			
 			//Postal Code
 			System.out.println("Enter Column of Credit Card Postal Code values");
-			creditCardPostalCodeColumn = 25;//in.nextInt();
+			creditCardPostalCodeColumn = in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardPostalCodeColumn);
 			
 			
@@ -519,11 +515,6 @@ public class CreditCardTokenLookUp {
 	try {
 		outputWriter = new CsvWriter(new FileWriter(outputFile, true), ',');
 		
-		/*/ write headers 
-		outputWriter.write("Zuora Account ID");
-		outputWriter.write("Credit Card Number");
-		outputWriter.endRecord();
-		*/
 		printHeaders(outputWriter);
 		//do lookups to get Account Id to Card Number mapping
 	
