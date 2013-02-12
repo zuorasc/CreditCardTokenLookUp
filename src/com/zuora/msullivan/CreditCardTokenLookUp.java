@@ -90,7 +90,7 @@ public class CreditCardTokenLookUp {
 			setCardType(type);
 			setCardExprYear(exprYear);
 			setCardExprMonth(exprMonth);
-			setCardHolderName(cardHolderName);
+			setCardHolderName(name);
 			setCardAddr1(addr1);
 			setCardAddr2(addr2);
 			setCardCountry(country);
@@ -262,8 +262,6 @@ public class CreditCardTokenLookUp {
 			this.cardZip = cardZip;
 		}
 		
-		
-		
 	}
 	
 	
@@ -366,7 +364,7 @@ public class CreditCardTokenLookUp {
 			
 			//Holder Name
 			System.out.println("Enter Column of Credit Card Holder Name values");
-			creditCardHolderNameColumn = 18;//in.nextInt();
+			creditCardHolderNameColumn = 13;//in.nextInt();
 			System.out.println("DEBUG cardNumColumn: " + creditCardHolderNameColumn);
 			
 			//Address 1
@@ -538,38 +536,38 @@ public class CreditCardTokenLookUp {
 	
 			//get Card Data
 			if(cardLookUp.containsKey(token)){
-				CreditCardData cardData = cardLookUp.get(token);
-				String cardType = cardData.getCardType();
-				
-				// write to output
-	
-				outputWriter.write("");
-				outputWriter.write(zAcctID);
-				outputWriter.write("CreditCard");
-				outputWriter.write(cardType);
-				outputWriter.write(cardData.getCardNumer());
-				outputWriter.write(""); 
-				outputWriter.write(cardData.getCardExprYear());
-				outputWriter.write(cardData.getCardExprMonth());
-				outputWriter.write(cardData.getCardHolderName());
-				outputWriter.write(cardData.getCardAddr1());
-				outputWriter.write(cardData.getCardAddr2());
-				outputWriter.write(cardData.getCardCountry());
-				outputWriter.write(cardData.getCardState());
-				outputWriter.write(cardData.getCardCity());
-				outputWriter.write(cardData.getCardZip());
-				outputWriter.write("");
-				outputWriter.write("");
-				outputWriter.write("");
-				outputWriter.write("");
-				outputWriter.write("");
-				outputWriter.write("");
-				outputWriter.write("TRUE");
-				outputWriter.write("");
-				outputWriter.write("Active");
-				outputWriter.write("");
-				outputWriter.write("");
-				outputWriter.endRecord();
+			CreditCardData cardData = cardLookUp.get(token);
+			String cardType = cardData.getCardType();
+			
+			// write to output
+
+			outputWriter.write("");
+			outputWriter.write(zAcctID);
+			outputWriter.write("CreditCard");
+			outputWriter.write(cardType);
+			outputWriter.write(cardData.getCardNumer());
+			outputWriter.write(""); 
+			outputWriter.write(cardData.getCardExprYear());
+			outputWriter.write(cardData.getCardExprMonth());
+			outputWriter.write(cardData.getCardHolderName());
+			outputWriter.write(cardData.getCardAddr1());
+			outputWriter.write(cardData.getCardAddr2());
+			outputWriter.write(cardData.getCardCountry());
+			outputWriter.write(cardData.getCardState());
+			outputWriter.write(cardData.getCardCity());
+			outputWriter.write(cardData.getCardZip());
+			outputWriter.write("");
+			outputWriter.write("");
+			outputWriter.write("");
+			outputWriter.write("");
+			outputWriter.write("");
+			outputWriter.write("");
+			outputWriter.write("TRUE");
+			outputWriter.write("");
+			outputWriter.write("Active");
+			outputWriter.write("");
+			outputWriter.write("");
+			outputWriter.endRecord();
 			}
 
 		}// end for token in zAcctLookUp
